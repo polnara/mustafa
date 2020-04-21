@@ -1,0 +1,14 @@
+{
+  "name": "onlineapp",
+  "version": "1.0.0",
+  "description": "\"It is my training application\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Narsi",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.8.3"
+  }
+}
