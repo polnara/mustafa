@@ -6,6 +6,11 @@
 import {Employee} from "./Employee";
 import {EmployeeValidator } from "./EmployeeValidator";
 import {address} from "./Employee";
+import {IEmployee} from "./employeeInterface";
+import {Calculator} from "./calculator";
+import {Computer} from "./computer";
+import {ICalculator} from "./calculatorInterface";
+
  let a : Number = 20;
  
  let b:string = "Hello";
@@ -14,12 +19,27 @@ import {address} from "./Employee";
  
  let d : String = "Welcome";
  
- 
-let emp = new Employee("Harish",20,600000,"SE");
-console.log(emp.name + "  "+ emp.salary + " "+emp.monthlySalary());
-console.log("Address :: "+address);
-console.log("Country :: "+Employee.country);
-console.log(emp.name + " is valid employee :: "+new EmployeeValidator().validateEmployee(emp));
+ //tightly coupled
+let emp:Employee = new Employee("Harish",20,600000,"SE");
 
-let emp2 = new Employee("Mahesh",40,800000,"Mechanical");
-console.log(Employee.country);
+let emp2:Employee = new Employee("Mahesh",40,800000,"Mechanical");
+emp2.officeEntered();
+
+let emp3:Employee = new Employee("Mahesh",40,800000,"Mechanical");
+
+let emp4:Employee = new Employee("Mahesh",40,800000,"Mechanical");
+emp4.officeEntered();
+
+emp4 = emp;
+
+Employee.officeExit();
+
+console.log("Total employees entered into office : "+Employee.count);
+// typechecking the json data
+let emp5:IEmployee = {"name":"Mahesh","age":40,"salary":500000,"designation":"SE","address":{"streetname":"varthur","city":"Bengalore","pincode":560087,"country":"india"}};
+console.log(emp5);
+// loosly coupled
+let cal1:ICalculator = new Calculator();
+console.log("Addition result :: "+cal1.add(20,30));
+console.log("Multiplication result :: "+cal1.multiply(20,30));
+
