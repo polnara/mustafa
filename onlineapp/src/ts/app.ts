@@ -42,4 +42,5 @@ console.log(emp5);
 let cal1:ICalculator = new Calculator();
 console.log("Addition result :: "+cal1.add(20,30));
 console.log("Multiplication result :: "+cal1.multiply(20,30));
+console.log("It is testing the build and deployemnet process");
 
