@@ -4,7 +4,9 @@
   "description": "\"It is my training application\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"abc" : "echo \"It is my Own command \"",
+	"start" : "echo \"It is predifined start command \""
   },
   "author": "Narsi",
   "license": "ISC",
