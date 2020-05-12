@@ -1,0 +1,25 @@
+<div>
+<ul *ngFor="let c of countries">
+    <li> {{c}}</li>
+</ul>
+
+<h4>List of Employees</h4>
+<table>
+    <tr *ngFor="let emp of employees">
+        <td>{{emp.name}}</td><td>{{emp.age}}</td><td>{{emp.salary}}</td>
+    </tr>
+</table>
+<h4>Matrix display</h4>
+<table>
+    <tr *ngFor="let elements of matrix">
+        <td *ngFor="let element of elements">
+            {{element}}
+        </td>
+    </tr>
+</table>
+<div>
+    <h4> Number :: <span *ngIf="num%2==0">{{num}} </span> </h4>
+    <button (click)="increment()">Inc</button>
+</div>
+
+    </div>

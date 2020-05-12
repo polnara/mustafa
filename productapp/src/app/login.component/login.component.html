@@ -1,1 +1,13 @@
-<h4 class="red">It is Login component</h4>
+<div>
+    <h4 class="red">It is Login component</h4>
+    <div id="loginForm">
+        <h4>Login Form</h4>
+        <input [(ngModel)]="userName"  type="text" placeholder="Enter User Name" />
+        <input [(ngModel)]="password" type="password" placeholder="Enter Password"/>
+        <button (click)="handleLogin()" [disabled]="canDisable" >Login</button> 
+    </div>
+    <div>
+        <h2>If not registered <a routerLink="/register">Click here</a></h2>
+    </div>
+    
+</div>
