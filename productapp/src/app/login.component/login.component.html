@@ -2,8 +2,9 @@
     <h4 class="red">It is Login component</h4>
     <div id="loginForm">
         <h4>Login Form</h4>
-        <input [(ngModel)]="userName"  type="text" placeholder="Enter User Name" />
-        <input [(ngModel)]="password" type="password" placeholder="Enter Password"/>
+        <input type="hidden" [(ngModel)]="loginInfo.type" value="Login"/>
+        <input [(ngModel)]="loginInfo.userName"  type="text" placeholder="Enter User Name" />
+        <input [(ngModel)]="loginInfo.password" type="password" placeholder="Enter Password"/>
         <button (click)="handleLogin()" [disabled]="canDisable" >Login</button> 
     </div>
     <div>

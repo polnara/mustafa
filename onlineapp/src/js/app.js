@@ -136,3 +136,24 @@ console.log(emp2);
 console.log("employee "+ emp2.name + " age is "+ emp2.age + " salary is "+ emp2.salary + " and Monthly salary is " + emp2.monthlySalary());
 
 var emp3 = {"name":"Ganesh","age":20,"salary":800000};
+
+// It handles the asynchronus functionality
+// it contain callback methods to handle the response
+// then, catch , finally
+var prmse = new Promise(function(){
+	return "Hai";
+});
+
+// when it is success
+prmse.then(()=>{ console.log("It is Then function")})
+// when failure
+prmse.catch(function(){
+	console.log("It is Catch Function ")
+})
+
+// whether it success or failed it execute
+prmse.finally(function(){
+	console.log("It is finally function");
+})
+
+
