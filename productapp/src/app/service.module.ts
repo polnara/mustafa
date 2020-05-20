@@ -6,22 +6,25 @@ import { OverviewComponent } from './services/overview/overview.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes : Routes =[
-    {
-        path:"",
-        component:OverviewComponent
-    },
-    {
-        path:"development",
-        component:DevelopmentComponent
-    },
-    {
-        path:"outsource",
-        component:OutsourcingComponent
-    },
-    {
-        path:"training",
-        component:TrainingComponent
-    }
+   {
+       path:"",
+       component:OverviewComponent,
+       children:[
+            {
+                path:"development",
+                component:DevelopmentComponent
+            },
+            {
+                path:"outsource",
+                component:OutsourcingComponent
+            },
+            {
+                path:"training",
+                component:TrainingComponent
+            }
+       ]
+   }
+    
 ]
 
 @NgModule({
@@ -35,9 +38,9 @@ const routes : Routes =[
         RouterModule.forChild(routes)
     ],
     providers:[],
-    bootstrap:[
-        OverviewComponent
-    ]
+    bootstrap:[OverviewComponent],
+    entryComponents:[OverviewComponent]
+    
 })
 export class ServiceModule{
 

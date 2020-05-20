@@ -10,8 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TrainingServie } from './training.service';
-import { ServiceModule } from './service.module';
-import { OverviewComponent } from './services/overview/overview.component';
 const routes: Routes = [
   {
     path: '',
@@ -55,7 +53,6 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    ServiceModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
