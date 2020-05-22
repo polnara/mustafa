@@ -1,14 +1,35 @@
-<div>
-    <h4 class="red">It is Login component</h4>
-    <div id="loginForm">
-        <h4>Login Form</h4>
-        <input type="hidden" [(ngModel)]="loginInfo.type" value="Login"/>
-        <input [(ngModel)]="loginInfo.userName"  type="text" placeholder="Enter User Name" />
-        <input [(ngModel)]="loginInfo.password" type="password" placeholder="Enter Password"/>
-        <button (click)="handleLogin()" [disabled]="canDisable" >Login</button> 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <h4 class="red">It is Login component</h4>
+        </div>
     </div>
-    <div>
-        <h2>If not registered <a routerLink="/register">Click here</a></h2>
+
+    <div class="row">
+        <div class="col-sm-4 col-lg-4 col-md-4"></div>
+        <div class="col-sm-8">
+            <div id="loginForm">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>Login Form</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="hidden" [(ngModel)]="loginInfo.type" value="Login"/>
+                    <input [(ngModel)]="loginInfo.userName"  type="text" placeholder="Enter User Name" />
+                    <input [(ngModel)]="loginInfo.password" type="password" placeholder="Enter Password"/>
+                    <button (click)="handleLogin()" [disabled]="canDisable" >Login</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div>
+            <h2>If not registered <a routerLink="/register">Click here</a></h2>
+        </div>
     </div>
     
 </div>

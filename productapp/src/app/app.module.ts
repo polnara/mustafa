@@ -6,10 +6,11 @@ import { LoginComponent } from './login.component/login.component';
 import { RegisterComponent } from './register/register.component';
 import  {RouterModule, Routes} from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TrainingServie } from './training.service';
+import { MustMatchDirective } from './mustMatchDirective';
 const routes: Routes = [
   {
     path: '',
@@ -48,11 +49,13 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

@@ -1,1 +1,52 @@
-<p>register works!</p>
+<!--
+Forms can develop in 2 ways
+Template driven forms -  validation perform on templates
+Reactive forms - validation performs on component
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div>
+            <h4>Registration Form</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && submitRegister()" [mustMatch]="['password','confirmPassword']">
+                <input type="text" [(ngModel)]="user.firstName" #firstName="ngModel" name="firstName" placeholder="Enter First Name" required/>
+                <div *ngIf="f.submitted && firstName.invalid" style="color: red;">
+                    <div *ngIf="firstName.errors.required">First Name is require</div>
+                </div>
+                
+                <input type="text" [(ngModel)]="user.lastName" #lastName="ngModel" name="lastName" placeholder="Enter Last Name" required/>
+                <div *ngIf="f.submitted && lastName.invalid" style="color: red;">
+                    <div *ngIf="lastName.errors.required">Last Name is require</div>
+                </div>
+                
+                <input type="password" ([ngModel])="user.password"  name="password" placeholder="Enter Password" required/>
+                <div>
+                    Password is required
+                </div>
+                <input type="password" ([ngModel])="user.confirmPassword" formControlName="confirmPassword" name="confirmPassword" placeholder="Confirm password" required/>
+                <div>
+                    Confirm Password is required
+                </div>
+                <div *ngIf="confirmPassword.errors.mustMatch">
+                    password must match
+                </div>
+                <span> Gender :: </span><input type="radio" name="gender"/>Male <input type="radio" name="gender"/>Female
+                <input type="date" placeholder="Enter date of birth"/>
+                <span> Interests :: </span> <input type="checkbox"/> Badminton
+                <input type="checkbox"/> Cricket <input type="checkbox"/> FootBall
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <input type="submit" value="Register"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>>

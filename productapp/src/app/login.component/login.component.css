@@ -5,17 +5,17 @@
 
 #loginForm{
     width: 200px;
-    height: 170px;
-    margin: 50px;
+    height: 200px;
     background-color: lightgreen;
 }
 
 #loginForm input{
-    margin: 10px;
+    margin: 10px 40px;
+    
 }
 
 #loginForm button{
-    margin: 10px 50px;
+    margin: 10px 80px;
 }
 
 #loginForm h4{

@@ -8,9 +8,15 @@ import { TrainingServie } from '../training.service';
 })
 export class RegisterComponent implements OnInit {
 
+  user:any = {};
+
   constructor(private serve:TrainingServie) { }
 
   ngOnInit() {
   }
 
+  submitRegister(){
+    console.log(this.user);
+    console.log("Register button clicked")
+  }
 }
