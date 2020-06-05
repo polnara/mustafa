@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { TrainingServie } from './training.service';
 import { MustMatchDirective } from './mustMatchDirective';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { FilterPipe } from './pipes/filter.pipe';
 const routes: Routes = [
   {
     path: '',
@@ -34,6 +36,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'reactiveForm',
+    component: ReactiveFormComponent
+  },
+  {
     path:"service",
    // component:OverviewComponent
     loadChildren:()=> import("./service.module").then(function(m){
@@ -50,12 +56,14 @@ const routes: Routes = [
     RegisterComponent,
     HeaderComponent,
     HomeComponent,
-    MustMatchDirective
+    MustMatchDirective,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    
     RouterModule.forRoot(routes)
   ],
   providers: [

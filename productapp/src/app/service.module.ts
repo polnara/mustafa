@@ -4,6 +4,9 @@ import { OutsourcingComponent } from './services/outsourcing/outsourcing.compone
 import { TrainingComponent } from './services/training/training.component';
 import { OverviewComponent } from './services/overview/overview.component';
 import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 const routes : Routes =[
    {
@@ -32,9 +35,12 @@ const routes : Routes =[
         DevelopmentComponent,
         OutsourcingComponent,
         TrainingComponent,
-        OverviewComponent
+        OverviewComponent,
+        FilterPipe
     ],
     imports:[
+        CommonModule,
+        FormsModule,
         RouterModule.forChild(routes)
     ],
     providers:[],

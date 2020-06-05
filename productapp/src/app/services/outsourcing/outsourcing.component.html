@@ -1,1 +1,19 @@
-<p>outsourcing works!</p>
+<div>{{userName | uppercase}}
+ 
+{{firstName | lowercase}}
+
+{{price | currency:"INR":"symbol"}}
+
+{{currentDate | date : 'MM/d/yyyy' }}
+
+{{emp | json}}
+
+<div>
+    <input type="text" [(ngModel)]="searchString"/>
+</div>
+<div>
+    <ul *ngFor="let e of empList | filter : searchString;">
+        <li>{{e}}</li>
+    </ul>
+</div>
+</div>

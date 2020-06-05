@@ -1,8 +1,9 @@
 import { Directive, Input } from '@angular/core';
-import { Validator, FormGroup, ValidationErrors } from '@angular/forms';
-
+import { Validator, FormGroup, ValidationErrors, NG_VALIDATORS } from '@angular/forms';
+import { MustMatch } from './mustMatchValidator';
 @Directive({
-    selector:'[mustMatch]'
+    selector:'[mustMatch]',
+    providers: [{ provide: NG_VALIDATORS, useExisting: MustMatchDirective, multi: true }]
 })
 export class MustMatchDirective implements Validator{
 
@@ -10,29 +11,7 @@ export class MustMatchDirective implements Validator{
     mustMatch: string[] = []
 
     validate(formGroup:FormGroup) : ValidationErrors{
-        return this.MustMatch(this.mustMatch[0],this.mustMatch[1]);
-    }
-
-    MustMatch(password:string, matchingPassword:string):ValidationErrors{
-       return (formGroup:FormGroup)=>{
-            const pwd = formGroup.controls[password];
-            const confirmPwd = formGroup.controls[matchingPassword];
-
-            // return null if controls haven't initilized it
-            if(!pwd && !confirmPwd){
-                return null
-            }
-
-            // return null if 
-            if(confirmPwd.errors && !confirmPwd.errors.mustMach){
-                return null;
-            }
-
-            if(pwd.value != confirmPwd.value){
-                confirmPwd.setErrors({MustMatch:true})
-            }else{
-                confirmPwd.setErrors(null)
-            }
-        }
+        return MustMatch(this.mustMatch[0],this.mustMatch[1])(formGroup);
     }
 }
+

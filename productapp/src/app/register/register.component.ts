@@ -6,17 +6,11 @@ import { TrainingServie } from '../training.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  user:any = {};
+  model: any = {};
 
-  constructor(private serve:TrainingServie) { }
-
-  ngOnInit() {
-  }
-
-  submitRegister(){
-    console.log(this.user);
-    console.log("Register button clicked")
+  onSubmit() {
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model));
   }
 }
