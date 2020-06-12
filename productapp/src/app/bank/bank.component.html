@@ -1,0 +1,12 @@
+<div>
+    <div id="amount">
+        Total Amount :: {{currentAmount}}
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="amount" placeholder = "Enter amount" />
+    </div>
+    <div>
+        <app-withdraw [currentAmount]="currentAmount" [withdrawAmount]="amount" (withdrawEvent)="handleResponse($event)"></app-withdraw> 
+        <app-deposit [currentAmount]="currentAmount" [depositAmount]="amount"  (depositEvent)="handleResponse($event)"></app-deposit>
+    </div>
+</div>

@@ -13,6 +13,10 @@ import { TrainingServie } from './training.service';
 import { MustMatchDirective } from './mustMatchDirective';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HttpClientModule} from '@angular/common/http';
+import { BankComponent } from './bank/bank.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { DepositComponent } from './deposit/deposit.component';
 const routes: Routes = [
   {
     path: '',
@@ -36,6 +40,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'bank',
+    component: BankComponent
+  },
+  {
     path: 'reactiveForm',
     component: ReactiveFormComponent
   },
@@ -57,13 +65,16 @@ const routes: Routes = [
     HeaderComponent,
     HomeComponent,
     MustMatchDirective,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    BankComponent,
+    WithdrawComponent,
+    DepositComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

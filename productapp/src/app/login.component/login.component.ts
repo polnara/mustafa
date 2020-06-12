@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Routes,Router } from '@angular/router';
 import { TrainingServie } from '../training.service';
+import { Observable } from 'rxjs';
 /*
 property binding -> []
 event binding -> ()
@@ -36,10 +37,20 @@ export class LoginComponent {
         */
         // call method
         console.log(this.loginInfo);
-        let status = this.service.execute(this.loginInfo)
+        let result:Observable<any> = this.service.execute(this.loginInfo);
+        result.subscribe((output)=>{
+            console.log("Results ");
+            console.log(output);
+            if(output[0].password == this.loginInfo.password){
+                console.log("If condition executed")
+                this.rout.navigate(["home"]);
+            }
+        })
+        /*console.log("Status :: "+status);
         if(status){    
             this.rout.navigate(["home"]);
         }
+        */
         
     }
 }
